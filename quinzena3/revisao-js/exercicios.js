@@ -105,6 +105,17 @@ function comparaDoisNumeros(num1, num2) {
   //   maiorDivisivelPorMenor: Y,
   //   diferenca: Z
   // }
+  let maior = num1
+  let menor = num1
+    if (num2 > maior){
+      maior = num2
+    }
+    if (num2 < menor){
+      menor = num2
+    }
+  let Y = maior%menor===0
+  let diferencaNum = Number(maior-menor)
+  return {'maiorNumero': maior, 'maiorDivisivelPorMenor': Y, 'diferenca':diferencaNum}
 }
 
 // EXERCÍCIO 10
