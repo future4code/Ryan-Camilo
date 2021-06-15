@@ -20,12 +20,21 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-
+  const filtrarPar2 = array.filter((inputArray)=>{
+    return inputArray%2 === 0
+  })
+  return filtrarPar2
 }
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
-
+let maior = 0
+  array.forEach((element,index) => {
+    if (maior < array[index]){
+      maior = element
+    }
+  });
+return maior
 }
 
 // EXERCÍCIO 05
