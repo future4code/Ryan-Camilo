@@ -51,22 +51,22 @@ function retornaExpressoesBooleanas() {
   const booleano4 = !booleano3
   let respostas = []
   respostas.length = 5
-  for (let i=0; i<respostas.length; i++){
+  for (let i = 0; i < respostas.length; i++) {
     switch (i) {
       case 0:
-        respostas[i]=(booleano1 && booleano2 && !booleano4)
+        respostas[i] = (booleano1 && booleano2 && !booleano4)
         break;
       case 1:
-        respostas[i]=((booleano1 && booleano2) || !booleano3)
+        respostas[i] = ((booleano1 && booleano2) || !booleano3)
         break;
       case 2:
-        respostas[i]=(booleano2 || booleano3) && (booleano4 || booleano1)
+        respostas[i] = (booleano2 || booleano3) && (booleano4 || booleano1)
         break;
       case 3:
-        respostas[i]=(!(booleano2 && booleano3) || !(booleano1 && booleano3))
+        respostas[i] = (!(booleano2 && booleano3) || !(booleano1 && booleano3))
         break;
       case 4:
-        respostas[i]=(!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3))
+        respostas[i] = (!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3))
         break;
       default:
         break;
@@ -78,8 +78,8 @@ function retornaExpressoesBooleanas() {
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
   const primeirosNumerosPares = []
-  for (let i=0; i<n*2; i++){
-    if (i%2===0){
+  for (let i = 0; i < n * 2; i++) {
+    if (i % 2 === 0) {
       primeirosNumerosPares.push(i)
     }
   }
@@ -88,9 +88,9 @@ function retornaNNumerosPares(n) {
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  if (a===b&&b===c){
+  if (a === b && b === c) {
     return 'Equilátero'
-  } else if (a===b||b===c||c===a){
+  } else if (a === b || b === c || c === a) {
     return 'Isósceles'
   } else {
     return ('Escaleno')
@@ -107,20 +107,46 @@ function comparaDoisNumeros(num1, num2) {
   // }
   let maior = num1
   let menor = num1
-    if (num2 > maior){
-      maior = num2
-    }
-    if (num2 < menor){
-      menor = num2
-    }
-  let Y = maior%menor===0
-  let diferencaNum = Number(maior-menor)
-  return {'maiorNumero': maior, 'maiorDivisivelPorMenor': Y, 'diferenca':diferencaNum}
+  if (num2 > maior) {
+    maior = num2
+  }
+  if (num2 < menor) {
+    menor = num2
+  }
+  let Y = maior % menor === 0
+  let diferencaNum = Number(maior - menor)
+  return { 'maiorNumero': maior, 'maiorDivisivelPorMenor': Y, 'diferenca': diferencaNum }
 }
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
-
+  maior = array[0]
+  menor = array[0] * array[1]
+  segundoMaior = array[0]
+  segundoMenor = array[0]
+  for (numbers of array) {
+    if (numbers > maior) {
+      segundoMaior = maior
+      maior = numbers
+    } else if (numbers < menor) {
+      segundoMenor = menor
+      menor = numbers
+    }
+  }
+  if (array.length === 2) {
+    segundoMaior = menor
+    segundoMenor = maior
+  } else if (array.length === 3) {
+    let media = 0
+    for (numbers2 of array) {
+      if ((numbers2 > menor) && (numbers2 < maior)) {
+        media = numbers2
+      }
+      segundoMaior = media
+      segundoMenor = media
+    }
+  }
+  return [segundoMaior, segundoMenor]
 }
 
 // EXERCÍCIO 11
