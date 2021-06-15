@@ -9,7 +9,13 @@ return reversedArray
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-
+  const filtrarPar = array.filter((inputArray)=>{
+    return inputArray%2 === 0
+  })
+  const elevarPar = filtrarPar.map((inputArray)=>{
+    return inputArray**2
+  })
+  return elevarPar
 }
 
 // EXERCÍCIO 03
