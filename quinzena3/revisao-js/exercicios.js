@@ -169,12 +169,20 @@ function ordenaArray(array) {
 
 // EXERCÍCIO 12
 function filmeFavorito() {
-
+  const favoritoAstrodev = {
+    nome: 'O Diabo Veste Prada',
+    ano: 2006,
+    diretor: 'David Frankel',
+    atores: [`Meryl Streep`, `Anne Hathaway`, `Emily Blunt`, `Stanley Tucci`]
+  }
+  return favoritoAstrodev
 }
 
 // EXERCÍCIO 13
 function imprimeChamada() {
   // "Venha assistir ao filme NOME_DO_FILME, de ANO, dirigido por DIRECAO e estrelado por ELENCO."
+  const chamadaFavorito = filmeFavorito()
+  return (`Venha assistir ao filme ${chamadaFavorito.nome}, de ${chamadaFavorito.ano}, dirigido por ${chamadaFavorito.diretor} e estrelado por ${chamadaFavorito.atores.join(', ')}.`)
 }
 
 // EXERCÍCIO 14
