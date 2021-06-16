@@ -206,11 +206,16 @@ function anonimizaPessoa(pessoa) {
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
 
+  const resultado = arrayDePessoas.filter((param)=>{
+    return param.idade>=18
+  })
+  return resultado
+
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-
+  
 }
 
 // EXERCÍCIO 17A
