@@ -243,7 +243,14 @@ function multiplicaArrayPor2S(array) {
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
-
+  const resultado = array.map((input)=>{
+    if (input%2===0){
+      return `${input} é par`
+    } else {
+      return `${input} é ímpar`
+    }
+  })
+  return resultado
 }
 
 // EXERCÍCIO 18A
