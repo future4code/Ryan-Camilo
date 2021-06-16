@@ -151,7 +151,20 @@ function segundoMaiorEMenor(array) {
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
-
+  
+  let checarTroca = true
+  while (checarTroca === true) {
+    checarTroca = false
+    for (let i = 0; i < array.length; i++) {
+    	  if (array[i] > array[i + 1]) {
+        let tempVar = array[i]
+        array[i] = array[i + 1]
+        array[i + 1] = tempVar
+        checarTroca = true
+      }
+    }
+  }
+  return array
 }
 
 // EXERCÍCIO 12
