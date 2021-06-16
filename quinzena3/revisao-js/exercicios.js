@@ -201,7 +201,6 @@ function anonimizaPessoa(pessoa) {
   const infoPessoal= {...pessoa,
     nome: 'ANÔNIMO'}
   return infoPessoal
-
 }
 
 // EXERCÍCIO 16A
