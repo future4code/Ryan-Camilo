@@ -151,12 +151,12 @@ function segundoMaiorEMenor(array) {
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
-  
+
   let checarTroca = true
   while (checarTroca === true) {
     checarTroca = false
     for (let i = 0; i < array.length; i++) {
-    	  if (array[i] > array[i + 1]) {
+      if (array[i] > array[i + 1]) {
         let tempVar = array[i]
         array[i] = array[i + 1]
         array[i + 1] = tempVar
@@ -190,24 +190,26 @@ function criaRetangulo(lado1, lado2) {
   const retangulo = {
     largura: lado1,
     altura: lado2,
-    perimetro: (2*Number(lado1+lado2)),
-    area: Number(lado1*lado2)
+    perimetro: (2 * Number(lado1 + lado2)),
+    area: Number(lado1 * lado2)
   }
   return retangulo
 }
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
-  const infoPessoal= {...pessoa,
-    nome: 'ANÔNIMO'}
+  const infoPessoal = {
+    ...pessoa,
+    nome: 'ANÔNIMO'
+  }
   return infoPessoal
 }
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
 
-  const resultado = arrayDePessoas.filter((param)=>{
-    return param.idade>=18
+  const resultado = arrayDePessoas.filter((param) => {
+    return param.idade >= 18
   })
   return resultado
 
@@ -215,24 +217,29 @@ function maioresDe18(arrayDePessoas) {
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-  const resultado = arrayDePessoas.filter((param)=>{
-    return param.idade<18
+  const resultado = arrayDePessoas.filter((param) => {
+    return param.idade < 18
   })
   return resultado
 }
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-    const resultado = array.map((param)=>{
-    return param*2
+  const resultado = array.map((param) => {
+    return param * 2
   })
   return resultado
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
-
+  const resultado = multiplicaArrayPor2(array)
+  const resultado2 = resultado.map((input) => {
+    return input.toString()
+  })
+  return resultado2
 }
+
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
