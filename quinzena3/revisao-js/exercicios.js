@@ -263,6 +263,7 @@ function retornaPessoasAutorizadas(pessoas) {
   return filtroPessoas
 }
 
+
 // EXERCÍCIO 18B
 function retornaPessoasNaoAutorizadas(pessoas) {
   const filtroPessoas = pessoas.filter((input) => {
@@ -275,15 +276,67 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
-
+  let checarTrue = false;
+  while (!checarTrue) {
+    checarTrue = true;
+    for (let i = 0; i < consultasNome.length - 1; i++) {
+      let nomeSeguinte = consultasNome[i + 1].nome
+      let comparaInicial = (consultasNome[i].nome).localeCompare(nomeSeguinte)
+      if (comparaInicial === 1) {
+        checarTrue = false;
+        let tmp = consultasNome[i + 1];
+        consultasNome[i + 1] = consultasNome[i];
+        consultasNome[i] = tmp;
+      }
+    }
+  }
+  return consultasNome;
 }
 
 // EXERCÍCIO 19B
 function ordenaPorData(consultasData) {
 
+  function transformaData(dataParametro) {
+    const quebraPalavra = dataParametro.split(`/`)
+    let dia = quebraPalavra[0]
+    let mes = quebraPalavra[1]
+    let ano = quebraPalavra[2]
+    let resultado = [ano, mes, dia]
+    return resultado
+  }
+
+
+  console.log(`PRIMEIRO PROGRAMA`)
+
+  let checarTrue = false;
+  while (!checarTrue) {
+    checarTrue = true;
+    for (let i = 0; i < consultasData.length - 1; i++) {
+      let dataAntes = new Date(transformaData(consultasData[i].dataDaConsulta))
+      let dataSeguinte = new Date(transformaData(consultasData[i + 1].dataDaConsulta))
+      if (dataSeguinte < dataAntes) {
+        checarTrue = false;
+        let tmp = consultasData[i + 1];
+        consultasData[i + 1] = consultasData[i];
+        consultasData[i] = tmp;
+      }
+    }
+  }
+  return consultasData;
 }
 
 // EXERCÍCIO 20
 function calculaSaldo(contas) {
-
+  for (let i=0; i<contas.length; i++){
+    for (creditos of contas[i].compras){
+      let soma = 0
+      soma += creditos
+      console.log(soma)
+      console.log(creditos)
+    }
+    //let comprasTotal = (contas[i].compras).forEach((e)=>{
+    let comprasTotal
+    comprasTotal = soma
+    console.log(comprasTotal)
+  }
 }
