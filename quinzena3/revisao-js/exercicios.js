@@ -328,15 +328,13 @@ function ordenaPorData(consultasData) {
 // EXERCÍCIO 20
 function calculaSaldo(contas) {
   for (let i=0; i<contas.length; i++){
+    let soma
+    soma = 0
     for (creditos of contas[i].compras){
-      let soma = 0
-      soma += creditos
-      console.log(soma)
-      console.log(creditos)
+      soma += Number(creditos)
     }
-    //let comprasTotal = (contas[i].compras).forEach((e)=>{
-    let comprasTotal
-    comprasTotal = soma
-    console.log(comprasTotal)
+    contas[i].saldoTotal = contas[i].saldoTotal - soma
+    console.log (contas[i].saldoTotal)
   }
+  return contas
 }
