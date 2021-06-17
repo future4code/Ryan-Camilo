@@ -243,8 +243,8 @@ function multiplicaArrayPor2S(array) {
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
-  const resultado = array.map((input)=>{
-    if (input%2===0){
+  const resultado = array.map((input) => {
+    if (input % 2 === 0) {
       return `${input} é par`
     } else {
       return `${input} é ímpar`
@@ -255,8 +255,8 @@ function verificaParidade(array) {
 
 // EXERCÍCIO 18A
 function retornaPessoasAutorizadas(pessoas) {
-  const filtroPessoas = pessoas.filter((input)=>{
-    if ((input.altura>=1.5)&&(input.idade>14)&&(input.idade<60)){
+  const filtroPessoas = pessoas.filter((input) => {
+    if ((input.altura >= 1.5) && (input.idade > 14) && (input.idade < 60)) {
       return input
     }
   })
@@ -265,7 +265,12 @@ function retornaPessoasAutorizadas(pessoas) {
 
 // EXERCÍCIO 18B
 function retornaPessoasNaoAutorizadas(pessoas) {
-
+  const filtroPessoas = pessoas.filter((input) => {
+    if (!((input.altura >= 1.5) && (input.idade > 14) && (input.idade < 60))) {
+      return input
+    }
+  })
+  return filtroPessoas
 }
 
 // EXERCÍCIO 19A
