@@ -1,0 +1,95 @@
+h1{
+    text-align: center;
+    display: inline-block;
+    margin: 30px 20%;
+    border: 1px solid #bbb;
+}
+header{
+    background-color: cornflowerblue;
+    border: 1px solid black;
+}
+img#logo-dice{
+    vertical-align: middle;
+    width: 230px;
+    height: auto;
+    margin:25px;
+}
+
+.banner .bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+.menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+.menu li{
+    float: left;       
+    border-right: 1px solid #bbb;
+}
+.menu li a{
+    display: block;
+    color: aliceblue ;  
+    padding: 8px 16px;
+    text-align: center;
+}
+.active {
+    background-color: #04AA6D;
+}
+.menu li a:hover:not(.active){
+    opacity: 0.4;
+    background-color: rgb(112, 78, 238);
+}
+.menu{
+    display: block;
+    padding: 8px;
+    background-color: rgb(51, 26, 141);
+
+}
+
+#facebook-img{
+    width: 30px;
+    height: auto;
+    color: blue;
+}
+
+
+#twitter-img{
+    width: 30px;
+    height: auto;
+}
+
+
+#instagram-img{
+    width: 30px;
+    height: auto;
+}
+
+body{
+    margin:0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+footer{
+    display: block;
+    flex: 1 0 auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: chocolate;
+    border: 1px solid black;
+    text-align: center;
+}
