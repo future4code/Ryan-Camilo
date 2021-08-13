@@ -3,7 +3,7 @@ import axios from "axios";
 import CriarUsuario from './components/CriarUsuario'
 import ListaDeUsuarios from './components/ListaDeUsuarios'
 import styled from 'styled-components'
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 const AppCss = styled.div`
 text-align: center;
@@ -23,10 +23,6 @@ class App extends React.Component {
         }
       }
     )
-
-  }
-
-  componentDidUpdate = () => {
 
   }
 
