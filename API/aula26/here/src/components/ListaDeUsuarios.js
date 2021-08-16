@@ -18,24 +18,31 @@ class ListaDeUsuarios extends React.Component {
     }
 
     getAllUsers = () => {
-        return axios.get(
+        return (axios.get(
             "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
             {
                 headers: {
                     Authorization: "ryan-camilo-johnson"
                 }
             }
-        )
-
-    }
+            )          
+            .then((response) =>{
+                this.setState({ listaDeUsuarios: response.data });
+            })
+            .catch((err) =>{
+                alert("Ocorreu um problema, tente novamente")
+            })
+        )}
 
 
     componentDidMount = () => {
-        this.getAllUsers().then((response) => {
-            console.log(response.data)
-            this.setState({ listaDeUsuarios: response.data });
-        });
+        this.getAllUsers()
+
     };
+
+    componentDidUpdate = () => {
+        this.getAllUsers()
+    }
 
     onClickDelete = (index) => {
         const id = (this.state.listaDeUsuarios[index].id)
@@ -49,6 +56,9 @@ class ListaDeUsuarios extends React.Component {
                 }
 
             )
+            .then((res)=>{
+                alert("Usuário deletado com sucesso")
+            })
         )
     }
 
@@ -61,7 +71,7 @@ class ListaDeUsuarios extends React.Component {
                 {this.state.listaDeUsuarios.map((users, i) => {
                     return (
                         <ContainerLista>
-                            <p key={i}>{users.name} <DeleteButton onClick={() => this.onClickDelete(i)}>Delete</DeleteButton></p>
+                            <p key={i}>{users.name} <DeleteButton key={i} onClick={() => this.onClickDelete(i)}>Delete</DeleteButton></p>
 
                         </ContainerLista>
                     );
